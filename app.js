@@ -18,7 +18,7 @@ console.log('views', path.join(__dirname, 'views'));
 //the GET route for the form
 app.get('/', (req,res)=> {
     //Render the form and pass in the current student data
-    res.render('index');
+    res.render('index.ejs');
 });
 
 //create a route for user to enter the numbers
