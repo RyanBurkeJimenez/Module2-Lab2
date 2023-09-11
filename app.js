@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const axios = require('axios');
 
 // Create an instance of express
 const app = express();
@@ -64,6 +65,20 @@ app.get("/simulateAsync", (req, res) => {
     res.json({ message: "Exercise 5: Promises -- Asynchronous operation completed!" });
   }, 2000);
 });
+app.get ("/Request", (req, res) => {
+  res.render("httpRequest");
+});
+
+app.post("/makeRequest", async (req, res) => {
+  const { url } = req.body;
+  try{
+    const response = await axios.get(url);
+    res.json(response.data);
+  } catch (error){
+    res.json({ error: error.message });
+  }
+});
+
 // Start the server on port 4000,
 // Note we are advertising the service on port number 4000 and not 3000 this time
 var port = 4000
