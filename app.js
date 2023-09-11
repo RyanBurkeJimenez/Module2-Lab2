@@ -56,6 +56,14 @@ const users =[];
     fruits.push(fruit);
     res.redirect("/fruits");
   });
+
+
+app.get("/simulateAsync", (req, res) => {
+  setTimeout(() => {
+
+    res.json({ message: "Exercise 5: Promises -- Asynchronous operation completed!" });
+  }, 2000);
+});
 // Start the server on port 4000,
 // Note we are advertising the service on port number 4000 and not 3000 this time
 var port = 4000
