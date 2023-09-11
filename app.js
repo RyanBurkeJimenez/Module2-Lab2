@@ -44,6 +44,18 @@ const users =[];
     const { name: userName, age: userAge, email: userEmail } = user;
     res.render("userInfo", { userName, userAge, userEmail });
   });
+
+  const fruits = ["Apple", "Orange", "Banana"];
+
+  app.get("/fruits", (req, res) => {
+    res.render("fruits", {fruits});
+  });
+
+  app.post("/addFruit", (req, res) => {
+    const {fruit} = req.body;
+    fruits.push(fruit);
+    res.redirect("/fruits");
+  });
 // Start the server on port 4000,
 // Note we are advertising the service on port number 4000 and not 3000 this time
 var port = 4000

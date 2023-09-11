@@ -1,0 +1,11 @@
+<head><header>Exercise 4: Spread Operator</header> </head>
+  <form action="/addFruit" method="POST">
+    <input type="text" name="fruit" placeholder="Enter a fruit" required>
+    <button type="submit">Add Fruit</button>
+  </form>
+
+  <ul>
+    <% fruits.forEach(fruit => { %>
+      <li><%= fruit %></li>
+    <% }); %>
+  </ul>
